@@ -16,16 +16,17 @@
 
     <div class="box">
         <% for(let i=0;i<arr.length;i++){ %>
-
-            <div class="item">
-                    <input type="checkbox" name="x" value="y"/>
+            <form action="/delete" method="POST">
+                <div class="item">
+                    <input type="checkbox" name="ind" value="<%= i+ListHeading %>" onChange="this.form.submit()" />
                     <p>
-                        <%= arr[i].item %>
+                        <%= arr[i] %>
                     </p>
-            </div>
+                </div>
+            </form>
             <% } %>
                 <form class="item" action="/" method="POST">
-                    <input type="text" name="item" placeholder="New Item" autocomplete="off"/>
+                    <input type="text" name="item" placeholder="New Item" autocomplete="off" />
                     <button type="submit" name="list" value="<%= ListHeading %>">+</button>
                 </form>
     </div>
